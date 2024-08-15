@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Practice</title>
+    <link rel="icon" href="img/js.png" type="image/icon type">
+</head>
+<body>
+
+    <a href="Javascript Practice.html">Home</a>
+    <a href="JSpage2.html">Page 1</a>
+    <a href="JSpage3.html">Page 2</a>
+    <a href="JSpage4.html">Page 3</a>
+
+    <p id="demo">Hello!</p>
+    <button type="button" onclick="document.getElementById('demo').innerHTML='HI!!'">Click</button><br>
+    <button type="button" onclick="document.getElementById('img').src='img/ai1.jpg';">First Pic</button>
+    <img id="img" src="img/ai1.jpg" alt="" width="150px">
+    <button type="button" onclick="document.getElementById('img').src='img/ai2.jpg';">Second Pic</button><br>
+    <p id="demo1">Hello</p>
+    <button type="button" onclick="document.getElementById('demo1').style.display = 'none';">Click Me</button>
+    <p id="demo2">Welcome to Javascript</p>
+    <button type="button" onclick="document.getElementById('demo2').style.fontSize='30px'">Click here</button>
+    <p id="demo3"></p>
+    <p id="demo4">Hack my wifi</p>
+    <button type="button" onclick="myFunction()">Change</button><br>
+    <button type="button" onclick="shot()">Print this page</button>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <h4 id="demo8"></h4>
+    <p id="demo9"></p>
+    <p id="demo10"></p>
+    <p id="demo11"></p>
+<script>
+    document.getElementById('demo3').innerHTML='Script Tag Test';
+    function myFunction() {
+        document.getElementById('demo4').innerHTML='Challenge Accepted';
+    }
+    // document.write('bello');
+    // alert((2-1)*6/2);
+    // console.log('text');
+    function shot(){
+        window.print();
+    }
+    let a, b, c;
+    a = 5;
+    b = 12;
+    c = a + b;
+    document.getElementById('demo5').innerHTML = 'The value is ' + c + '';
+
+    // try {
+        // carName = 'BMW';
+        let carName = 'Audi';
+    // } catch (error) {
+        document.getElementById('demo6').innerHTML = carName;
+    // }
+
+    const cars = ['Audi', ' BMW', ' Lexus'];
+    cars.push(' Bugatti');
+    const car = {type:'Audi', model:'1000', color:'black', price:'$10000'}
+    car.owner = 'John';
+    // document.getElementById('demo7').innerHTML = car.owner;
+
+    let text1 = 'What a very';
+    text1 += ' nice day';
+    document.getElementById('demo8').innerHTML = text1;
+    // The exponentiation operator (**) raises the first operand to the power of the second operand.
+    // Math.pow(x,y);
+    let x = 10;
+    x **= 5;
+    document.getElementById('demo9').innerHTML = x; 
+    // Left and Right Shift Operator (<<=)(>>=) (2^5 position to shift)
+    {
+        let x = -100;
+        x >>>= 5;
+        document.getElementById('demo10').innerHTML = x;
+    }
+    // AND, OR, and XOR bitwise operators 
+    {
+        let x = 100;
+        x &= 5;
+        document.getElementById('demo11').innerHTML = x;
+    }
+</script>
+
+
+
+</body>
+</html>

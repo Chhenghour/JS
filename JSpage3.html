@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Arrays</title>
+    <link rel="icon" href="img/js.png">
+</head>
+<body>
+    
+    <a href="Javascript Practice.html">Home</a>
+    <a href="JSpage2.html">Page 1</a>
+    <a href="JSpage3.html">Page 2</a>
+    <a href="JSpage4.html">Page 3</a>
+
+    <h1>Array Methods</h1>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+    <p id="demo8"></p>
+    <p id="demo9"></p>
+    <p id="demo10"></p>
+    <p id="demo11"></p>
+    <p id="demo12"></p>
+    <h1>Array Search</h1>
+    <p id="demo13"></p>
+    <p id="demo14"></p>
+    <p id="demo15"></p>
+    <p id="demo16"></p>
+    <p id="demo17"></p>
+    <p id="demo18"></p>
+    <p id="demo19"></p>
+    <h1>Array Sort</h1>
+    <p id="demo20"></p>
+    <p id="demo21"></p>
+    <p id="demo22"></p>
+    <p id="demo23"></p>
+    <p id="demo24"></p>
+    <p id="demo25"></p>
+    <p id="demo26"></p>
+    <h1>Array Iteration</h1>
+    <p id="demo27"></p>
+    <p id="demo28"></p>
+    <p id="demo29"></p>
+    <p id="demo30"></p>
+    <p id="demo31"></p>
+    <p id="demo32"></p>
+    <p id="demo33"></p>
+    <p id="demo34"></p>
+
+    <script>
+        // Length
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        let size = fruits.length;
+        document.getElementById("demo").innerHTML = size;
+        // toString()
+        document.getElementById('demo1').innerHTML = fruits.toString();
+        // at()
+        document.getElementById("demo2").innerHTML = fruits.at(1);
+        // join()
+        document.getElementById("demo3").innerHTML = fruits.join(" + ");
+        // pop()
+        document.getElementById("demo4").innerHTML = fruits.pop();
+        // push()
+        fruits.push("Kiwi");
+        document.getElementById("demo5").innerHTML = fruits;
+        // shift()
+        document.getElementById("demo6").innerHTML = fruits.shift();
+        // unshift()
+        fruits.unshift("Lemon");
+        document.getElementById("demo7").innerHTML = fruits;
+        // concat()
+        const myGirls = ["Cecile", "Lone"];
+        const myBoys = ["Emil", "Tobias", "Linus"];
+        document.getElementById("demo7").innerHTML = myBoys.concat(myGirls);
+        // copyWithin(destination, from , to)
+        const vegetables = ["Cabbage", "Eggplant", "Tomato", "Potato", "Carrot", "Radish", "Ginger"];
+        document.getElementById("demo8").innerHTML = vegetables.copyWithin(1, 0);
+        // flat()
+        const arr = [[1, 2], [3, 4], [5, 6]];
+        document.getElementById("demo9").innerHTML = arr.flat();
+        // flatMap()
+        const map = [1, 2, 3];
+        document.getElementById("demo10").innerHTML = map.flatMap(x => [x, x * 2 + x]);
+        // splice(), toSpliced()
+        // map.splice(3, 0, 4, 5);
+        document.getElementById("demo11").innerHTML = map.toSpliced(0, 1);
+        // slice()
+        const maps = map.slice(2);
+        document.getElementById("demo12").innerHTML = maps;
+        // indexOf()
+        const pokemons = ["Charizard", "Blastiose", "Venusaur", "Charizard"];
+        document.getElementById("demo13").innerHTML = pokemons.indexOf("Charizard");
+        // lastIndexOf()
+        document.getElementById("demo14").innerHTML = pokemons.lastIndexOf("Charizard");
+        // includes()
+        document.getElementById("demo15").innerHTML = pokemons.includes("Blastiose");
+        // find(), findIndex()
+        const numbers = [4, 9, 16, 25, 29];
+        function myNum(value, index, array){
+            return value > 18
+        }
+        document.getElementById("demo16").innerHTML = numbers.find(myNum);
+        document.getElementById("demo17").innerHTML = numbers.findIndex(myNum);
+        // findLast(), findLastIndex()
+        const temp = [27, 28, 30, 40, 42, 35, 30]; 
+        document.getElementById("demo18").innerHTML = temp.findLast(x => x > 40);
+        document.getElementById("demo19").innerHTML = temp.findLastIndex(x => x >40);
+        // sort(), reverse()
+        const boats = ["Raft", "Sailboat", "Cruise", "Yacht"];
+        boats.sort();
+        document.getElementById("demo20").innerHTML = boats.reverse();
+        // toSorted(), toReversed()
+        const misc = ["App", "Buy", "Cat", "Dog"];
+        document.getElementById("demo21").innerHTML = misc.toSorted();
+        document.getElementById("demo22").innerHTML = misc.toReversed();
+        // Numeric Sort
+        const points = [40, 100, 1, 5, 25, 10];
+        document.getElementById("demo23").innerHTML = points.sort(function (a, b){return a - b});
+        // Random Sort
+        document.getElementById("demo24").innerHTML = points.sort(function(){return 0.5 - Math.random()});
+        // Math.min.apply(), Math.max.apply()
+        document.getElementById("demo25").innerHTML = Math.min.apply(null, points);
+        document.getElementById("demo26").innerHTML = Math.max.apply(null, points);
+        // forEach()
+        let txt = "";
+        numbers.forEach(myTxt);
+        function myTxt(value){
+            txt += value + "<br>";
+        }
+        document.getElementById("demo27").innerHTML = txt;
+        // map()
+        function myFun(value){
+            return value * 0 ;
+        }
+        document.getElementById("demo28").innerHTML = numbers.map(myFun);
+        // filter(), every(), some()
+        function myFil(value){
+            return value == 25;
+        }
+        document.getElementById("demo29").innerHTML = numbers.some(myFil);
+        // reduce(), reduceRight()
+        function myRed(total, value){
+            return total + value;
+        }
+        document.getElementById("demo30").innerHTML = numbers.reduce(myRed);
+        // from()
+        document.getElementById("demo31").innerHTML = Array.from("1234");
+        // keys(), entries()
+        const keys = numbers.entries();
+        let text = "";
+        for(let x of keys){
+            text += x + "<br>";
+        }
+        document.getElementById("demo32").innerHTML = text;
+        // with()
+        document.getElementById("demo33").innerHTML = numbers.with(0, 5);
+        // Spread(...)
+        const q1 = ["Jan", "Feb", "Mar"];
+        const q2 = ["Apr", "May", "Jun"];
+        const q3 = ["Jul", "Aug", "Sep"];
+        const q4 = ["Oct", "Nov", "Dec"];
+
+        const year = [...q1, ...q2, ...q3, ...q4];
+        document.getElementById("demo34").innerHTML = year;
+
+    </script>
+</body>
+</html>
